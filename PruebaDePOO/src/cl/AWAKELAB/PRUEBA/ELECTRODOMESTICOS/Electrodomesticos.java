@@ -2,7 +2,7 @@ package cl.AWAKELAB.PRUEBA.ELECTRODOMESTICOS;
 
 import java.util.Arrays;
 
-public abstract class Electrodomesticos implements IElectrodomesticos {
+public class Electrodomesticos implements IElectrodomesticos {
 	
     
     public float precioBase;
@@ -59,6 +59,33 @@ public abstract class Electrodomesticos implements IElectrodomesticos {
 		}
         return c;
     }
+    public float precioFinal() {
+		float p=this.precioBase;
+		
+		if (this.peso<20) {
+			p+=10;
+		}else if (this.peso<50 && this.peso>19) {
+			p+=50;
+		}else if (this.peso<80 && this.peso>49) {
+			p+=80;
+		}else
+			p+=100;
+		
+		if ( this.consumoEnergetico==('A')) {
+			p+=100;
+		}else if (this.consumoEnergetico==('B')) {
+			p+=80;
+		}else if (this.consumoEnergetico==('C')) {
+			p+=60;
+		}else if (this.consumoEnergetico==('D')) {
+			p+=50;
+		}else if (this.consumoEnergetico==('E')) {
+			p+=30;
+		}else
+			p+=10;
+		
+		return p;
+	}
     
     
     public float getPrecioBase() {
@@ -102,33 +129,6 @@ public abstract class Electrodomesticos implements IElectrodomesticos {
                 ", color=" + color + ", consumoEnergetico="
                 + consumoEnergetico + ", peso=" + peso + "]";
     }
-	public float precioFinal() {
-		float p=this.precioBase;
-		
-		if (this.peso<20) {
-			p+=10;
-		}else if (this.peso<50 && this.peso>19) {
-			p+=50;
-		}else if (this.peso<80 && this.peso>49) {
-			p+=80;
-		}else
-			p+=100;
-		
-		if ( this.consumoEnergetico==('A')) {
-			p+=100;
-		}else if (this.consumoEnergetico==('B')) {
-			p+=80;
-		}else if (this.consumoEnergetico==('C')) {
-			p+=60;
-		}else if (this.consumoEnergetico==('D')) {
-			p+=50;
-		}else if (this.consumoEnergetico==('E')) {
-			p+=30;
-		}else
-			p+=10;
-		
-		return p;
-	}
     
     
 

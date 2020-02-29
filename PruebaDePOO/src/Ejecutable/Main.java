@@ -24,15 +24,6 @@ public class Main {
 		arrayElectodomesticos[9] = new Televisor("Azul", 3548, 'b', 40, 56, true);
 		
 		
-		for (int i=0; i<arrayElectodomesticos.length;i++) {
-			
-			if (arrayElectodomesticos[i] instanceof Electrodomesticos) {
-				TotalElectrodomesticos+=arrayElectodomesticos[i].precioFinal();
-			}
-		}
-		
-		
-		
 			
 		
 		
@@ -58,7 +49,14 @@ public class Main {
 		}
 		System.out.println("");
 		System.out.println("El valor de todos los Televisores es $" + TotalTelevision);
-		System.out.println("");
+	
+		
+		for (int i=0; i<arrayElectodomesticos.length;i++) {
+			
+			if (arrayElectodomesticos[i] instanceof Electrodomesticos) {
+				TotalElectrodomesticos+=arrayElectodomesticos[i].precioFinal();
+			}
+		}
 		
 	
 		System.out.println("");
